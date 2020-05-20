@@ -6,8 +6,10 @@ body {
 }
 
 a {
+  display: block;
   color: #000;
   text-decoration: none;
+  text-align: center;
 }
 
 .movie-card {

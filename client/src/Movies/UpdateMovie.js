@@ -59,7 +59,6 @@ const UpdateMovie = props => {
 
         axios.put(`http://localhost:5000/api/movies/${id}`, updatedMovie)
             .then(res => {
-                console.log(res)
                 setMovieList(movieList.map(m => m.id !== id ? m : res.data))
                 push('/')
             })
