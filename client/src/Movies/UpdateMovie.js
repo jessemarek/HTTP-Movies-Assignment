@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 
 const UpdateMovie = props => {
 
+    const {
+        movieList,
+        setMovieList
+
+    } = props
+
     const { id } = useParams()
+
+    const { push } = useHistory()
 
     const intiialFormValues = {
         title: '',
@@ -53,6 +61,8 @@ const UpdateMovie = props => {
         axios.put(`http://localhost:5000/api/movies/${id}`, updatedMovie)
             .then(res => {
                 console.log(res)
+                setMovieList(movieList.map(m => m.id !== id ? m : res.data))
+                push('/')
             })
             .catch(err => console.log(err))
     }
