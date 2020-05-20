@@ -79,10 +79,15 @@ a {
   top: 125px;
 }
 
-.home-button, .add-movie-button {
+.home-button, .add-movie-button, button {
   margin: 5% 0;
+  border: none;
   padding: 5px 10px;
   background-color: lightskyblue;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .movie-warning {

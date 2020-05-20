@@ -41,7 +41,6 @@ const AddMovie = props => {
 
         axios.post(`http://localhost:5000/api/movies/`, newMovie)
             .then(res => {
-                console.log(res)
                 setMovieList(res.data)
                 push('/')
             })
@@ -81,7 +80,7 @@ const AddMovie = props => {
                         name="stars"
                         onChange={changeHandler}
                         value={formValues.stars}
-                        placeholder="Enter stars in list seperated by commas"
+                        placeholder="Enter as list seperated by commas"
                     />
                 </label>
                 <button>Add</button>

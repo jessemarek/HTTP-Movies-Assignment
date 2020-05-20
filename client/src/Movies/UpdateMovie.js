@@ -30,7 +30,6 @@ const UpdateMovie = props => {
 
         axios.get(`http://localhost:5000/api/movies/${id}`)
             .then(res => {
-                console.log(res)
                 setFormValues({
                     ...res.data,
                     stars: res.data.stars.join(', ')
@@ -100,7 +99,7 @@ const UpdateMovie = props => {
                         name="stars"
                         onChange={changeHandler}
                         value={formValues.stars}
-                        placeholder="Enter stars in list seperated by commas"
+                        placeholder="Enter as list seperated by commas"
                     />
                 </label>
                 <button>Update</button>

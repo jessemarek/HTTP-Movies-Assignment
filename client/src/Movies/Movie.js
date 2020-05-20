@@ -5,7 +5,7 @@ import MovieCard from "./MovieCard";
 
 const Movie = props => {
 
-  const { addToSavedList, movieList, setMovieList } = props
+  const { addToSavedList, movieList, setMovieList, savedList, setSavedList } = props
 
   const [movie, setMovie] = useState(null);
   const params = useParams();
@@ -28,6 +28,7 @@ const Movie = props => {
       .then(res => {
         console.log(res)
         setMovieList(movieList.filter(m => m.id !== params.id))
+        setSavedList(savedList.filter(m => m.title !== params.id))
         push('/')
       })
       .catch(err => console.log(err))
